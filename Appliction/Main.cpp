@@ -17,6 +17,7 @@
 #include"vendor\glm\gtc\matrix_transform.hpp"
 #include "vendor\imgui\imgui.h"
 #include "vendor\imgui\imgui_impl_glfw_gl3.h"
+#include"test\TestClearColor.h"
 
 /*
     OpenGL方法文档地址：https://docs.gl
@@ -128,21 +129,26 @@ int main(void)
     glm::vec3 translationB(400, 200, 0);
 
 
+    test::TestClearColor TestColor;
+
     /* 当用户没有关闭窗口的时候执行循环里面的东西 */
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         rendener.Clear();
 
+        TestColor.OnRendener();
+
         ImGui_ImplGlfwGL3_NewFrame();
 
+#pragma region TestCode
 
-        shader.Bind();
+        /*shader.Bind();
 
 
         {
             ImGui::Text("Hello, world!");                           // Display some text (you can use a format string too)
-            ImGui::SliderFloat3("TranlstaleAa", &translationA.x, 0.0f, 960.0f);            // Edit 1 float using a slider from 0.0f to 1.0f    
+            ImGui::SliderFloat3("TranlstaleAa", &translationA.x, 0.0f, 960.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
             glm::mat4 modle = glm::translate(glm::mat4(1.0f), translationA);
             glm::mat4 mvp = ptoj * view * modle;
 
@@ -155,14 +161,16 @@ int main(void)
 
 
         {
-            ImGui::SliderFloat3("TranlstaleB", &translationB.x, 0.0f, 960.0f);            // Edit 1 float using a slider from 0.0f to 1.0f    
+            ImGui::SliderFloat3("TranlstaleB", &translationB.x, 0.0f, 960.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
             glm::mat4 modle = glm::translate(glm::mat4(1.0f), translationB);
             glm::mat4 mvp = ptoj * view * modle;
 
             shader.SetUniformMat4v("u_MVP", mvp);
 
             rendener.Draw(va, index, shader);
-        }
+        }*/
+#pragma endregion
+        TestColor.OnImGuiRender();
 
 
 
