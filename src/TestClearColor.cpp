@@ -29,4 +29,12 @@ namespace test {
 	{
 		ImGui::ColorEdit4("clear color", m_ClearColor);
 	}
+
+	void TestClearColor::OnClear()
+	{
+		//设置windows背景颜色
+		GLErrorCallBack(glClearColor(0.0f,0.0f,0.0f,1.0f));
+		//使用颜色
+		GLErrorCallBack(glClear(GL_COLOR_BUFFER_BIT));
+	}
 }

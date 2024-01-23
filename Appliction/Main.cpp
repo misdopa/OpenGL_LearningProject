@@ -129,7 +129,12 @@ int main(void)
     glm::vec3 translationB(400, 200, 0);
 
 
-    test::TestClearColor TestColor;
+    test::test* current=nullptr;
+    test::TestMenu* TestMune = new test::TestMenu(current);
+
+    current = TestMune;
+
+    TestMune->RegisterTest<test::TestClearColor>("Clear Color");
 
     /* 当用户没有关闭窗口的时候执行循环里面的东西 */
     while (!glfwWindowShouldClose(window))
@@ -137,7 +142,7 @@ int main(void)
         /* Render here */
         rendener.Clear();
 
-        TestColor.OnRendener();
+        //TestColor.OnRendener();
 
         ImGui_ImplGlfwGL3_NewFrame();
 
@@ -170,7 +175,22 @@ int main(void)
             rendener.Draw(va, index, shader);
         }*/
 #pragma endregion
-        TestColor.OnImGuiRender();
+        //TestColor.OnImGuiRender();
+        if (current)
+        {
+            current->OnUpdate(0.0f);
+            current->OnRendener();
+            ImGui::Begin("Test");
+            if (current != TestMune && ImGui::Button("<-"))
+            {
+                current->OnClear();
+                delete current;
+                current = TestMune;
+
+            }
+            current->OnImGuiRender();
+            ImGui::End();
+        }
 
 
 
