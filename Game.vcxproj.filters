@@ -54,13 +54,13 @@
     <ClCompile Include="include\vendor\imgui\imgui_impl_glfw_gl3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="include\test\TestClearColor.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\TestClearColor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TestTexture2D.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1374,6 +1374,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\test\TestClearColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\test\TestTexture2D.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

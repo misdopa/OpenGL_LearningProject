@@ -149,7 +149,6 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\Learning\C++\GitGame\OpenGL_LearningProject\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\Learning\C++\GitGame\OpenGL_LearningProject\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="include\test\TestClearColor.cpp" />
     <ClCompile Include="include\vendor\glm\detail\glm.cpp" />
     <ClCompile Include="include\vendor\imgui\imgui.cpp" />
     <ClCompile Include="include\vendor\imgui\imgui_demo.cpp" />
@@ -161,6 +160,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\test.cpp" />
     <ClCompile Include="src\TestClearColor.cpp" />
+    <ClCompile Include="src\TestTexture2D.cpp" />
     <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\VertexArray.cpp" />
     <ClCompile Include="src\VertexBuffer.cpp" />
@@ -309,6 +309,7 @@
     <ClInclude Include="include\OpenGLDebug.h" />
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\Shader.h" />
+    <ClInclude Include="include\test\TestTexture2D.h" />
     <ClInclude Include="include\Texture.h" />
     <ClInclude Include="include\vendor\glm\common.hpp" />
     <ClInclude Include="include\vendor\glm\detail\compute_common.hpp" />
